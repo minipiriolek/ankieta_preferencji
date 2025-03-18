@@ -4,6 +4,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ankieta_preferencji.MainWindow"
-        Title="ankieta_preferencji">
-    Welcome to Avalonia!
+        Title="Ankieta Preferencji"
+        Background="#FFFAF3"
+        Width="1200"
+        Height="800">
+
+    <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+
+        <TextBlock Text="Wpisz swoje imię:" Margin="0,0,0,10" HorizontalAlignment="Center" 
+                   Foreground="#2E8B57" FontSize="16"/>
+        <TextBox x:Name="UserNameTextBox" Width="200" Margin="0,0,0,10" HorizontalAlignment="Center"
+                 Background="#FFFDD0" BorderBrush="#2E8B57" BorderThickness="2"/>
+
+        <TextBlock Text="Wybierz kategorię zainteresowań:" Margin="0,10,0,10" HorizontalAlignment="Center"
+                   Foreground="#2E8B57" FontSize="16"/>
+        <ComboBox x:Name="InterestComboBox" Width="200" Margin="0,0,0,20" HorizontalAlignment="Center"
+                  Background="#FFFDD0" BorderBrush="#2E8B57" BorderThickness="2">
+            <ComboBoxItem Content="Technologia" />
+            <ComboBoxItem Content="Sport" />
+            <ComboBoxItem Content="Kultura" />
+        </ComboBox>
+
+        <Button Content="Zatwierdź dane" Width="150" Margin="0,0,0,20" HorizontalAlignment="Center"
+                Background="#4682B4" Foreground="White" BorderThickness="0"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="Czy lubisz programować?" Width="200" Foreground="#000080"/>
+                <CheckBox x:Name="ProgrammingCheckBox"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="Czy interesujesz się sportem?" Width="200" Foreground="#000080"/>
+                <CheckBox x:Name="SportCheckBox"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,5">
+                <TextBlock Text="Czy lubisz podróże?" Width="200" Foreground="#000080"/>
+                <CheckBox x:Name="TravelCheckBox"/>
+            </StackPanel>
+        </Grid>
+
+        <Button Content="Wyświetl podsumowanie" Width="150" Margin="0,20,0,10" HorizontalAlignment="Center"
+                Background="#4682B4" Foreground="White" BorderThickness="0"/>
+        <StackPanel x:Name="SummaryPanel" IsVisible="False" Margin="0,10,0,0">
+            <TextBlock x:Name="SummaryTextBlock" HorizontalAlignment="Center" 
+                       Foreground="#2E8B57" FontSize="14"/>
+        </StackPanel>
+
+    </StackPanel>
 </Window>
